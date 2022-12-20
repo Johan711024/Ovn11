@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Storage2.Data;
 
@@ -11,9 +12,10 @@ using Storage2.Data;
 namespace Storage2.Migrations
 {
     [DbContext(typeof(Storage2Context))]
-    partial class Storage2ContextModelSnapshot : ModelSnapshot
+    [Migration("20221219152218_StorageWithAttributes")]
+    partial class StorageWithAttributes
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

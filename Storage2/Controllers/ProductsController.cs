@@ -19,6 +19,15 @@ namespace Storage2.Controllers
             _context = context;
         }
 
+
+        public async Task<IActionResult> ProductCount()
+        {
+            return View(await _context.Product.ToListAsync());
+        }
+
+
+
+
         // GET: Products
         public async Task<IActionResult> Index()
         {
@@ -54,6 +63,7 @@ namespace Storage2.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        
         public async Task<IActionResult> Create([Bind("Id,Name,Price,Orderdate,Category,Shelf,Count,Description")] Product product)
         {
             if (ModelState.IsValid)
